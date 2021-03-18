@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+        <style>
+            body{
+text-align:center;
+    font-size:33px;
+    background-size:cover;
+    background-repeat:repeat;
+    }
+
+ .project {
+      border-radius:5px;
+      width:100px;
+      height:100px;    
+      position:relative; 
+      top:60px; 
+      left:60px;  
+      background-color:cyan;  
+      border-style:solid;        
+}
+
+
+.two{
+    transform:rotateY(180deg) translateY(-102px)
+translateZ(100px);}
+
+
+.three{
+    transform:rotateY(-90deg) translate(-50px,-204px) translateZ(50px);
+}
+
+
+.four{
+    transform:rotateY(90deg)  translate(50px,-306px) translateZ(50px);
+}
+
+.five{
+    transform: translateY(-458px) translateZ(-50px) rotateX(90deg);
+}
+
+.six{transform:translateY(-460px) translateZ(-50px) rotateX(-90deg);
+}
+
+#cube{margin-top:30%;
+    margin-left:18%;
+    transform-style:preserve-3d; 
+    transition:all 0.5s linear;
+    transform-origin:110px 110px -50px;
+}
+
+
+#dgh{
+    transform:translateY(-200px);
+}
+
+
+        </style>
+    </head>
+    <body>        
+    <article id="cube" onclick="rot()">
+        <div class="project one"></br>*</div>
+        <div class="project two"></br>*   *</div>
+        <div class="project three">*</br>
+            *   *
+        </div>
+        <div class="project four">*   *</br>
+            *   *
+        </div>
+        <div class="project five">*    *<br/>
+              *<br/>
+            *    *
+        </div>
+        <div class="project six">*    *<br/>*    *<br/>*    *</div>
+    </article>  
+    
+    <div id="dgh"> Click dice to rotate</div>  
+    
+    <script>function rot(){
+
+var ad=Math.random()*100;
+
+var na=Math.round(ad);
+
+var mn=Math.random()*100;
+
+var nm=Math.round(mn);
+
+var dice=document.getElementById("cube");
+
+if(na>0 && na<33){
+   var axis="X";
+}
+if(na>33 && na<66){
+   var axis="Y";
+}
+if(na>66 && na<99){
+   var axis="Z";
+}
+if(nm>0 && nm<25){
+    var degree="90deg"
+}
+if(nm>25 && nm<50){
+    var degree="180deg"
+}
+if(nm>50 && nm<75){
+    var degree="270deg"
+}
+if(nm>75 && nm<99){
+    var degree="360deg"
+}
+
+dice.style.transform="rotate"+axis+"("+degree+")";
+}
+
+
+
+
+</script>
+    </body>
+</html>
